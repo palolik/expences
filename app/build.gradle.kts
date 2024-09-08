@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.kotlin.kapt) // Kapt plugin for annotation processing
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android.gradle.plugin) // Hilt plugin
 }
 android {
@@ -28,6 +28,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -41,9 +42,9 @@ dependencies {
     implementation(libs.viewmodel)
     implementation(libs.livedata)
     implementation(libs.hiltandroid)
-    kapt(libs.hiltandroidcompiler)
+    ksp(libs.hiltandroidcompiler)
     implementation(libs.room)
-    kapt(libs.roomcompiler)
+    ksp(libs.roomcompiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
