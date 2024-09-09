@@ -1,4 +1,4 @@
-package com.kotlin5.expenses.data
+package com.kotlin5.expenses
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,5 +7,8 @@ import androidx.room.PrimaryKey
 data class Expense(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val amount: Double
+    val amount: Double,
+    val time: String,
+    val date: String,
+    val type: String
 )

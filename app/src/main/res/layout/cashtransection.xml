@@ -10,19 +10,31 @@
     android:gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
-
   <LinearLayout
       android:orientation="vertical"
       android:layout_width="wrap_content"
       android:layout_height="match_parent">
+         <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="150dp"
+          android:layout_height="wrap_content">
       <TextView
           android:id="@+id/ammount"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="4dp"
-          android:text="1000"
+          android:text="1000--"
           android:textSize="25sp"
           android:textColor="@android:color/black"/>
+      <TextView
+          android:id="@+id/ammountw"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="4dp"
+          android:text="movie"
+          android:textSize="25sp"
+          android:textColor="@android:color/black"/>
+          </LinearLayout>
       <TextView
           android:id="@+id/time"
           android:layout_width="wrap_content"
@@ -39,10 +51,9 @@
           android:text="11th January"
           android:textSize="12sp"
           android:textColor="#689F38"/>
-
   </LinearLayout>
 <View
-    android:layout_width="200dp"
+    android:layout_width="150dp"
     android:layout_height="match_parent"/>
     <ImageView
         android:id="@+id/star1"

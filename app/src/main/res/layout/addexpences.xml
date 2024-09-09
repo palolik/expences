@@ -9,18 +9,23 @@
         android:layout_height="729dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="S" />
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="money" />
@@ -29,6 +34,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="cause" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="time" />
@@ -37,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expenseTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="date" />
