@@ -6,14 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,7 +32,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
-
                         <ImageView
                             android:id="@+id/imageView"
                             android:layout_width="392dp"
@@ -42,7 +39,6 @@
                             app:srcCompat="@drawable/back"
                             tools:layout_editor_absoluteX="-10dp"
                             tools:ignore="MissingConstraints" />
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
                     <View
                         android:id="@+id/view"
@@ -75,14 +71,6 @@
                             android:text="Add Expense"
                             android:textColor="@android:color/white"
                             android:textStyle="bold" />
-                        <ImageButton
-                            android:id="@+id/btn_backs"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginEnd="16dp"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:contentDescription="Back"
-                            android:src="@drawable/ic_back" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="338dp"
@@ -100,32 +88,29 @@
                             android:orientation="vertical"
                             android:padding="16dp">
                             <LinearLayout
+                                       android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:orientation="horizontal"
+                                       android:gravity="center"
+                                       android:layout_marginTop="4dp">
+                            <com.google.android.material.chip.ChipGroup
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center"
-                                android:layout_marginTop="4dp">
-                                <Button
-                                android:id="@+id/btn_cash_in"
-                                android:layout_width="120dp"
-                                android:layout_height="40dp"
-                                android:text="Cash In"
-                                android:background="@drawable/button_selector"
-                                android:textColor="@color/green"
-                                android:textAllCaps="false"
-                                android:layout_marginRight="10dp" />
-                                <Button
-                                android:id="@+id/btn_cash_out"
-                                android:layout_width="120dp"
-                                android:layout_height="40dp"
-                                android:text="Cash Out"
-                                android:background="@drawable/button_selector"
-                                android:textColor="@color/green"
-                                android:textAllCaps="false"
-                                android:layout_marginLeft="10dp" />
-                            </LinearLayout>
+                                android:layout_height="wrap_content" >
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/btn_cash_in"
+                                    android:text="Cash in"
+                                    android:background="@drawable/button_selector"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
 
-
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/btn_cash_out"
+                                    android:text="Cash out"
+                                    android:background="@drawable/button_selector"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </com.google.android.material.chip.ChipGroup>
+                               </LinearLayout>
                             <TextView
                                 android:id="@+id/textView"
                                 android:layout_width="match_parent"
@@ -157,7 +142,6 @@
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical"
                                 >
-
                                 <EditText
                                     android:id="@+id/et_amount"
                                     android:layout_width="match_parent"
@@ -167,7 +151,6 @@
                                     android:inputType="numberDecimal"
                                     android:padding="12dp"
                                     android:textSize="16sp" />
-
                                 <TextView
                                     android:id="@+id/btn_clear"
                                     android:layout_width="wrap_content"
@@ -177,7 +160,6 @@
                                     android:background="@color/white"
                                     android:layout_marginStart="-50dp"/>
                             </LinearLayout>
-
                             <TextView
                                 android:id="@+id/textView4"
                                 android:layout_width="match_parent"
@@ -192,7 +174,6 @@
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical"
                             >
-
                                 <TextView
                                     android:id="@+id/tv_date"
                                     android:layout_width="match_parent"
@@ -202,7 +183,6 @@
                                     android:text="Tue, 22 Feb 2022"
                                     android:textColor="#000000"
                                     android:textSize="16sp" />
-
                                 <ImageButton
                                     android:layout_marginLeft="-40dp"
                                     android:id="@+id/btn_date_picker"
@@ -211,27 +191,20 @@
                                     android:src="@drawable/ic_calendar"
                                     android:background="?android:attr/selectableItemBackground"
                                     android:contentDescription="Pick Date"/>
-
                             </LinearLayout>
-
                             <Button
                                 android:id="@+id/btn_add"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Add"
+                                android:text="@string/add"
                                 android:background="@drawable/border_button"
                                 android:textColor="@color/green"
                                 android:textAllCaps="false"
                                 android:layout_marginTop="24dp"
-
                                 />
-
-
                         </LinearLayout>
                     </LinearLayout>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
