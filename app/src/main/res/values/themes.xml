@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Expenses" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+       <item name="colorPrimary">@color/green</item>
     </style>
     <style name="Button_Secondary" parent="Widget.MaterialComponents.Button">
         <item name="android:textSize">18sp</item>

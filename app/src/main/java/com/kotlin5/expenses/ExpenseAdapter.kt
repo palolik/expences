@@ -30,11 +30,24 @@ class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() 
         fun bind(expense: Expense) {
             binding.etName.text = expense.name
             binding.etDate.text = expense.date
-            binding.etAmount.text = when (expense.type) {
-                "Cash In" -> "+$${String.format("%.2f", expense.amount)}"
-                "Cash Out" -> "-$${String.format("%.2f", expense.amount)}"
-                else -> "$${String.format("%.2f", expense.amount)}"
+
+            val formattedAmount = String.format("%.2f", expense.amount)
+            val amountText = when (expense.type) {
+                "Cash In" -> "+$$formattedAmount"
+                "Cash Out" -> "-$$formattedAmount"
+                else -> "$$formattedAmount"
             }
+
+            binding.etAmount.text = amountText
+
+            val color = when (expense.type) {
+                "Cash In" -> binding.root.context.getColor(R.color.colorCashIn)
+                "Cash Out" -> binding.root.context.getColor(R.color.colorCashOut)
+                else -> binding.root.context.getColor(R.color.colorDefault)
+            }
+
+            binding.etAmount.setTextColor(color)
         }
+
     }
 }

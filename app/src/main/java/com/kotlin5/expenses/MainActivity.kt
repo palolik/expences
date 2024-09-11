@@ -24,13 +24,26 @@ class MainActivity : AppCompatActivity() {
         val adapter = ExpenseAdapter()
 
         binding.cashlist.adapter = adapter
-        binding.cashlist.layoutManager = LinearLayoutManager(this) // Set the LayoutManager
+        binding.cashlist.layoutManager = LinearLayoutManager(this)
 
         expenseViewModel.allExpenses.observe(this, Observer { expenses ->
             expenses?.let {
                 adapter.submitList(it)
                 logExpenses(it)  // Log the expenses
             }
+        })
+
+        // Observe total balance, income, and expenses
+        expenseViewModel.totalBalance.observe(this, Observer { totalBalance ->
+            binding.ettotalbalance.text = "$${String.format("%.2f", totalBalance)}"
+        })
+
+        expenseViewModel.totalIncome.observe(this, Observer { totalIncome ->
+            binding.totalincome.text = "$${String.format("%.2f", totalIncome)}"
+        })
+
+        expenseViewModel.totalExpenses.observe(this, Observer { totalExpenses ->
+            binding.totalexpense.text = "$${String.format("%.2f", totalExpenses)}"
         })
 
         binding.fab.setOnClickListener {

@@ -2,6 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="green">#004D40</color>
+    <color name="green">#2F7E79</color>
+    <color name="colorCashIn">#2F7E79</color>
+    <color name="colorCashOut">#2F7E79</color>
+    <color name="colorDefault">#000000</color>
+    <color name="chip_background">#FFFFFF</color>
+    <color name="chip_stroke">#2F7E79</color>
+    <color name="chip_text">#000000</color>
+    <color name="chip_background_selected">#2F7E79</color>
+    <color name="chip_stroke_selected">#2F7E79</color>
+    <color name="chip_text_selected">#FFFFFFFF</color>
 </resources>
 

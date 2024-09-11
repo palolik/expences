@@ -2,6 +2,7 @@ package com.kotlin5.expenses
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,8 @@ class AddExpenseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddExpenseBinding
     private val expenseViewModel: ExpenseViewModel by viewModels()
     private var expenseType: String = "Cash Out"
-
+    private var isCashInPressed: Boolean = false
+    private var isCashOutPressed: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddExpenseBinding.inflate(layoutInflater)
@@ -25,17 +27,21 @@ class AddExpenseActivity : AppCompatActivity() {
 
         binding.btnCashIn.setOnClickListener {
             expenseType = "Cash In"
+            isCashInPressed = true
+            isCashOutPressed = false
+            updateButtonStates()
             Toast.makeText(this, "Cash In pressed", Toast.LENGTH_SHORT).show()
         }
         binding.btnCashOut.setOnClickListener {
             expenseType = "Cash Out"
+            isCashInPressed = false
+            isCashOutPressed = true
+            updateButtonStates()
             Toast.makeText(this, "Cash Out pressed", Toast.LENGTH_SHORT).show()
         }
-
         binding.btnDatePicker.setOnClickListener {
             showDatePicker()
         }
-
         binding.btnAdd.setOnClickListener {
             val name = binding.etName.text.toString()
             val amount = binding.etAmount.text.toString().toDoubleOrNull() ?: 0.0
@@ -64,12 +70,22 @@ class AddExpenseActivity : AppCompatActivity() {
         setDefaultDate()
     }
 
+    private fun updateButtonStates() {
+
+        binding.btnCashIn.setBackgroundColor(
+            if (isCashInPressed) getColor(R.color.green) else getColor(R.color.white)
+        )
+
+        binding.btnCashOut.setBackgroundColor(
+            if (isCashOutPressed) getColor(R.color.green) else getColor(R.color.white)
+        )
+    }
+
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
-
         val datePickerDialog = DatePickerDialog(
             this,
             { _, selectedYear, selectedMonth, selectedDay ->
@@ -81,10 +97,8 @@ class AddExpenseActivity : AppCompatActivity() {
             },
             year, month, day
         )
-
         datePickerDialog.show()
     }
-
     private fun setDefaultDate() {
         val currentDate = Calendar.getInstance().time
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
