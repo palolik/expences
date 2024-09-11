@@ -70,12 +70,12 @@
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/linearLayout"
-                        android:layout_width="338dp"
+                        android:layout_width="350dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="100dp"
                         android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.491"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
                         <LinearLayout
@@ -182,12 +182,7 @@
         android:textSize="18dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:id="@+id/transaction_history"
-
-        />
-
-
-
+        android:id="@+id/transaction_history" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cashlist"
             android:layout_width="match_parent"

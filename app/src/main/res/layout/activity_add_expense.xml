@@ -125,16 +125,6 @@
                                 android:layout_marginLeft="10dp" />
                             </LinearLayout>
 
-                            <RadioGroup
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-
-                                <RadioButton
-                                    android:id="@+id/radioButton"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="RadioButton" />
-                            </RadioGroup>
 
                             <TextView
                                 android:id="@+id/textView"

@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
         expenseViewModel.allExpenses.observe(this, Observer { expenses ->
             expenses?.let {
                 adapter.submitList(it)
-                logExpenses(it)  // Log the expenses
+                logExpenses(it)
             }
         })
 
-        // Observe total balance, income, and expenses
+
         expenseViewModel.totalBalance.observe(this, Observer { totalBalance ->
             binding.ettotalbalance.text = "$${String.format("%.2f", totalBalance)}"
         })
