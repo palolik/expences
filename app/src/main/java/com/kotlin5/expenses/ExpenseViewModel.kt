@@ -1,4 +1,5 @@
 package com.kotlin5.expenses
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,23 +8,23 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ExpenseViewModel @Inject constructor(private val repository: ExpenseRepository) : ViewModel() {
+class ExpenseViewModel @Inject constructor(private val expenseRepository: ExpenseRepository) : ViewModel() {
 
-    val allExpenses: LiveData<List<Expense>> = repository.getAllExpenses()
+    val allExpenses: LiveData<List<Expense>> = expenseRepository.getAllExpenses()
 
-    fun insertExpense(expense: Expense) = viewModelScope.launch {
-        repository.insertExpense(expense)
+    fun insert(expense: Expense) = viewModelScope.launch {
+        expenseRepository.insertExpense(expense)
     }
 
-    fun updateExpense(expense: Expense) = viewModelScope.launch {
-        repository.updateExpense(expense)
+    fun update(expense: Expense) = viewModelScope.launch {
+        expenseRepository.updateExpense(expense)
     }
 
-    fun deleteExpense(expense: Expense) = viewModelScope.launch {
-        repository.deleteExpense(expense)
+    fun delete(expense: Expense) = viewModelScope.launch {
+        expenseRepository.deleteExpense(expense)
     }
 
-//    fun getExpenseById(id: Int): LiveData<Expense?> {
-//        // Use live data and a coroutine to fetch expense by ID
-//    }
+    fun getExpenseById(id: Int) = viewModelScope.launch {
+        expenseRepository.getExpenseById(id)
+    }
 }

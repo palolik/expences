@@ -1,8 +1,8 @@
 package com.kotlin5.expenses
 
-import AddExpenseActivity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -21,20 +21,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up RecyclerView
         val adapter = ExpenseAdapter()
-        binding.cashlist.layoutManager = LinearLayoutManager(this)
-        binding.cashlist.adapter = adapter
 
-        // Observe changes in the expense list
+        binding.cashlist.adapter = adapter
+        binding.cashlist.layoutManager = LinearLayoutManager(this) // Set the LayoutManager
+
         expenseViewModel.allExpenses.observe(this, Observer { expenses ->
-            expenses?.let { adapter.submitList(it) }
+            expenses?.let {
+                adapter.submitList(it)
+                logExpenses(it)  // Log the expenses
+            }
         })
 
-        // Set up FAB to add expenses
         binding.fab.setOnClickListener {
             val intent = Intent(this, AddExpenseActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun logExpenses(expenses: List<Expense>) {
+        Log.d("MainActivity", "Expenses List: ${expenses.joinToString { "ID: ${it.id}, Name: ${it.name}, Amount: ${it.amount}, Date: ${it.date}, Type: ${it.type}" }}")
     }
 }

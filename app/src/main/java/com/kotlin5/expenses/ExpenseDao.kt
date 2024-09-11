@@ -2,17 +2,18 @@ package com.kotlin5.expenses
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-
+import androidx.room.Delete
 
 @Dao
 interface ExpenseDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Query("SELECT * FROM expenses")
+    fun getAllExpenses(): LiveData<List<Expense>>
+
+    @Insert
     suspend fun insertExpense(expense: Expense)
 
     @Update
@@ -21,10 +22,6 @@ interface ExpenseDao {
     @Delete
     suspend fun deleteExpense(expense: Expense)
 
-    @Query("SELECT * FROM expenses ORDER BY date DESC")
-    fun getAllExpenses(): LiveData<List<Expense>>
-
-    @Query("SELECT * FROM expenses WHERE id = :expenseId")
-    suspend fun getExpenseById(expenseId: Int): Expense?
-
+    @Query("SELECT * FROM expenses WHERE id = :id")
+    suspend fun getExpenseById(id: Int): Expense?
 }

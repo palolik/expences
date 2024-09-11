@@ -8,7 +8,6 @@ data class Expense(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
     val amount: Double,
-    val time: String,
     val date: String,
     val type: String
 )

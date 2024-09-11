@@ -1,11 +1,11 @@
 package com.kotlin5.expenses
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlin5.expenses.databinding.CashtransectionBinding
 
 class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
-
     private var expenses = listOf<Expense>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
@@ -28,15 +28,12 @@ class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() 
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(expense: Expense) {
-            binding.ammount.text = "${expense.amount}--"
-            binding.ammountw.text = expense.name
-            binding.time.text = expense.time
-            binding.date.text = expense.date
-
-            if (expense.type == "Income") {
-                binding.star1.setImageResource(R.drawable.`in`)
-            } else {
-                binding.star1.setImageResource(R.drawable.out)
+            binding.etName.text = expense.name
+            binding.etDate.text = expense.date
+            binding.etAmount.text = when (expense.type) {
+                "Cash In" -> "+$${String.format("%.2f", expense.amount)}"
+                "Cash Out" -> "-$${String.format("%.2f", expense.amount)}"
+                else -> "$${String.format("%.2f", expense.amount)}"
             }
         }
     }

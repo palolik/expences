@@ -1,6 +1,5 @@
 package com.kotlin5.expenses
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import dagger.Module
@@ -16,10 +15,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideContext(application: Application): Context = application
-
-    @Provides
-    @Singleton
     fun provideExpenseDatabase(@ApplicationContext context: Context): ExpenseDatabase {
         return Room.databaseBuilder(
             context,
@@ -29,7 +24,6 @@ object AppModule {
     }
 
     @Provides
-    @Singleton
     fun provideExpenseDao(db: ExpenseDatabase): ExpenseDao {
         return db.expenseDao()
     }
