@@ -26,7 +26,6 @@ class AddExpenseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddExpenseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.btnCashIn.setOnClickListener {
             expenseType = "Cash In"
             isCashInPressed = true
@@ -48,17 +47,14 @@ class AddExpenseActivity : AppCompatActivity() {
             val name = binding.etName.text.toString()
             val amount = binding.etAmount.text.toString().toDoubleOrNull() ?: 0.0
             val date = binding.tvDate.text.toString()
-
             if (name.isBlank()) {
                 Toast.makeText(this, "Please enter a name for the expense", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
             if (amount == 0.0) {
                 Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
             val newExpense = Expense(
                 name = name,
                 amount = amount,
@@ -68,21 +64,16 @@ class AddExpenseActivity : AppCompatActivity() {
             expenseViewModel.insert(newExpense)
             finish()
         }
-
         setDefaultDate()
     }
-
     private fun updateButtonStates() {
-
         binding.btnCashIn.setBackgroundColor(
             if (isCashInPressed) getColor(R.color.green) else getColor(R.color.white)
         )
-
         binding.btnCashOut.setBackgroundColor(
             if (isCashOutPressed) getColor(R.color.green) else getColor(R.color.white)
         )
     }
-
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
