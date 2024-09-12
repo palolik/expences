@@ -1,9 +1,11 @@
-package com.kotlin5.expenses
+package com.kotlin5.expenses.ui.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kotlin5.expenses.model.db.Expense
+import com.kotlin5.expenses.model.repository.ExpenseRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,7 +19,6 @@ class ExpenseViewModel @Inject constructor(private val expenseRepository: Expens
     val totalExpenses: MediatorLiveData<Double> = MediatorLiveData()
 
     init {
-        // Observer for allExpenses to compute totalIncome and totalExpenses
         totalBalance.addSource(allExpenses) { expenses ->
             val income = expenses.filter { it.type == "Cash In" }.sumOf { it.amount }
             val expensesTotal = expenses.filter { it.type == "Cash Out" }.sumOf { it.amount }
@@ -25,19 +26,13 @@ class ExpenseViewModel @Inject constructor(private val expenseRepository: Expens
             totalExpenses.value = expensesTotal
             totalBalance.value = income - expensesTotal
         }
-
-        // Observer for totalIncome to update totalBalance
         totalBalance.addSource(totalIncome) { income ->
             totalBalance.value = income - (totalExpenses.value ?: 0.0)
         }
-
-        // Observer for totalExpenses to update totalBalance
         totalBalance.addSource(totalExpenses) { expensesTotal ->
             totalBalance.value = (totalIncome.value ?: 0.0) - expensesTotal
         }
-    
-
-    totalIncome.addSource(allExpenses) { expenses ->
+        totalIncome.addSource(allExpenses) { expenses ->
             totalIncome.value = expenses.filter { it.type == "Cash In" }.sumOf { it.amount }
         }
         totalExpenses.addSource(allExpenses) { expenses ->

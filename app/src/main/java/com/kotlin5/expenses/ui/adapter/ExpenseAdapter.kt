@@ -1,8 +1,10 @@
-package com.kotlin5.expenses
+package com.kotlin5.expenses.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.kotlin5.expenses.model.db.Expense
+import com.kotlin5.expenses.R
 import com.kotlin5.expenses.databinding.CashtransectionBinding
 
 class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
@@ -26,26 +28,21 @@ class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() 
 
     inner class ExpenseViewHolder(private val binding: CashtransectionBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(expense: Expense) {
             binding.etName.text = expense.name
             binding.etDate.text = expense.date
-
             val formattedAmount = String.format("%.2f", expense.amount)
             val amountText = when (expense.type) {
                 "Cash In" -> "+$$formattedAmount"
                 "Cash Out" -> "-$$formattedAmount"
                 else -> "$$formattedAmount"
             }
-
             binding.etAmount.text = amountText
-
             val color = when (expense.type) {
                 "Cash In" -> binding.root.context.getColor(R.color.colorCashIn)
                 "Cash Out" -> binding.root.context.getColor(R.color.colorCashOut)
                 else -> binding.root.context.getColor(R.color.colorDefault)
             }
-
             binding.etAmount.setTextColor(color)
         }
 

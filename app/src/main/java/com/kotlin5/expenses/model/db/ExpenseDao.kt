@@ -1,4 +1,4 @@
-package com.kotlin5.expenses
+package com.kotlin5.expenses.model.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

@@ -54,24 +54,36 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/view">
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
                         <ImageButton
                             android:id="@+id/btn_back"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
                             android:background="?android:attr/selectableItemBackground"
                             android:contentDescription="Back"
                             android:src="@drawable/ic_back" />
-                        <TextView
-                            android:id="@+id/tv_add_expense"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="Add Expense"
-                            android:textColor="@android:color/white"
-                            android:textStyle="bold" />
+
+
+
+                            <TextView
+                                android:id="@+id/tv_add_expense"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="20sp"
+                                android:text="Add Expense"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
                     </LinearLayout>
+
+
                     <LinearLayout
                         android:layout_width="338dp"
                         android:layout_height="wrap_content"
@@ -95,20 +107,26 @@
                                        android:layout_marginTop="4dp">
                             <com.google.android.material.chip.ChipGroup
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" >
+                                android:layout_height="wrap_content"
+                                app:singleSelection="true"
+                                >
+
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_in"
                                     android:text="Cash in"
-                                    android:background="@drawable/button_selector"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    style="@style/CustomShipStyle"
+                                    android:layout_width="140dp"
+                                    android:background="@drawable/border_button"
+                                    android:layout_height="wrap_content"
+                                    />
 
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_out"
                                     android:text="Cash out"
-                                    android:background="@drawable/button_selector"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"/>
+                                    style="@style/CustomShipStyle"
+                                    android:layout_width="140dp"
+                                    android:layout_height="wrap_content"
+                                    />
                             </com.google.android.material.chip.ChipGroup>
                                </LinearLayout>
                             <TextView

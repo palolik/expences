@@ -1,6 +1,8 @@
-package com.kotlin5.expenses
+package com.kotlin5.expenses.model.repository
 
 import androidx.lifecycle.LiveData
+import com.kotlin5.expenses.model.db.Expense
+import com.kotlin5.expenses.model.db.ExpenseDao
 import javax.inject.Inject
 
 class ExpenseRepository @Inject constructor(private val expenseDao: ExpenseDao) {

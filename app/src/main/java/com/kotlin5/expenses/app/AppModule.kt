@@ -1,7 +1,9 @@
-package com.kotlin5.expenses
+package com.kotlin5.expenses.app
 
 import android.content.Context
 import androidx.room.Room
+import com.kotlin5.expenses.model.db.ExpenseDao
+import com.kotlin5.expenses.model.db.ExpenseDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

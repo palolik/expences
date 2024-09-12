@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- res/values/styles.xml -->
+
 <resources>
-    <!-- Default Chip Style -->
-    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Action">
-        <item name="chipBackgroundColor">@color/chip_background</item>
-        <item name="chipStrokeColor">@color/chip_stroke</item>
-
-    </style>
-
-    <!-- Selected Chip Style -->
-    <style name="ChipStyleSelected" parent="Widget.MaterialComponents.Chip.Action">
-        <item name="chipBackgroundColor">@color/chip_background_selected</item>
+    <style name="CustomShipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_backgroud_color</item>
         <item name="chipStrokeColor">@color/chip_stroke_selected</item>
-
+        <item name="background">@drawable/border_button</item>
     </style>
 </resources>

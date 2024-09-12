@@ -1,12 +1,14 @@
-package com.kotlin5.expenses
+package com.kotlin5.expenses.ui.view
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.kotlin5.expenses.model.db.Expense
+import com.kotlin5.expenses.R
 import com.kotlin5.expenses.databinding.ActivityAddExpenseBinding
+import com.kotlin5.expenses.ui.model.ExpenseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
