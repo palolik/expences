@@ -7,6 +7,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.kotlin5.expenses.R
 import com.kotlin5.expenses.model.db.Expense
 import com.kotlin5.expenses.databinding.ActivityMainBinding
 import com.kotlin5.expenses.ui.adapter.ExpenseAdapter
@@ -15,7 +17,27 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                startActivity(Intent(this, MainActivity::class.java))
+                true
+            }
+            R.id.statistics -> {
+                startActivity(Intent(this, StatisticsActivity::class.java))
+                true
+            }
+            R.id.wallet -> {
+                startActivity(Intent(this, WalletActivity::class.java))
+                true
+            }
+            R.id.myprofile -> {
+                startActivity(Intent(this, ProfileActivity::class.java))
+                true
+            }
+            else -> false
+        }
+    }
     private lateinit var binding: ActivityMainBinding
     private val expenseViewModel: ExpenseViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +66,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddExpenseActivity::class.java)
             startActivity(intent)
         }
+
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
     private fun logExpenses(expenses: List<Expense>) {
         Log.d("MainActivity", "Expenses List: ${expenses.joinToString { "ID: ${it.id}, Name: ${it.name}, Amount: ${it.amount}, Date: ${it.date}, Type: ${it.type}" }}")
     }
+
+
 }

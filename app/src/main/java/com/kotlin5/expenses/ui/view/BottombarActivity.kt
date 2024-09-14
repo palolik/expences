@@ -7,9 +7,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.kotlin5.expenses.R
 
-class GetStartedActivity : AppCompatActivity() {
+class BottombarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_getstarted)
-        }
+        setContentView(R.layout.activity_bottombar)
+
     }
+}

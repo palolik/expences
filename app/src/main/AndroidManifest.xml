@@ -14,6 +14,24 @@
         android:theme="@style/Theme.Expenses"
         tools:targetApi="31">
         <activity
+            android:name=".ui.view.ConnectwalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.StatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.MyprofileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.BottombarActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.GetStartedActivity"
             android:exported="false" />
         <activity

@@ -9,7 +9,15 @@ class ExpenseRepository @Inject constructor(private val expenseDao: ExpenseDao) 
 
     fun getAllExpenses(): LiveData<List<Expense>> = expenseDao.getAllExpenses()
 
-    suspend fun insertExpense(expense: Expense) = expenseDao.insertExpense(expense)
+    suspend fun insertExpense(expense: Expense):Boolean{
+        try {
+            expenseDao.insertExpense(expense)
+            return true
+        }catch (e:Exception){
+            return false
+        }
+
+    }
     suspend fun updateExpense(expense: Expense) = expenseDao.updateExpense(expense)
     suspend fun deleteExpense(expense: Expense) = expenseDao.deleteExpense(expense)
     suspend fun getExpenseById(id: Int): Expense? = expenseDao.getExpenseById(id)

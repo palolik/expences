@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/home"
+    android:icon="@drawable/homeicon"
+    android:title="home"
+    />
+    <item
+        android:id="@+id/statistics"
+        android:icon="@drawable/statisticsicon"
+        android:title="statistics"
+        />
+    <item
+        android:id="@+id/wallet"
+        android:icon="@drawable/walleticon"
+        android:title="wallet"
+        />
+    <item
+        android:id="@+id/myprofile"
+        android:icon="@drawable/profileicon"
+        android:title="profile"
+        />
+</menu>

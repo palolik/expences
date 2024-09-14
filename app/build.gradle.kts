@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.viewmodel)
     implementation(libs.livedata)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.recyclerview)
     ksp(libs.room.compiler)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
