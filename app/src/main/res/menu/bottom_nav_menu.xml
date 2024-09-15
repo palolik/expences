@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
     android:id="@+id/home"
     android:icon="@drawable/homeicon"
-    android:title="home"
-    />
+        tools:ignore="MenuTitle"/>
     <item
         android:id="@+id/statistics"
         android:icon="@drawable/statisticsicon"
-        android:title="statistics"
-        />
+        tools:ignore="MenuTitle" />
     <item
         android:id="@+id/wallet"
         android:icon="@drawable/walleticon"
-        android:title="wallet"
+        tools:ignore="MenuTitle"
         />
     <item
         android:id="@+id/myprofile"
         android:icon="@drawable/profileicon"
-        android:title="profile"
+        tools:ignore="MenuTitle"
         />
 </menu>

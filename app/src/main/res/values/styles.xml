@@ -5,6 +5,7 @@
         <item name="chipBackgroundColor">@color/chip_backgroud_color</item>
         <item name="chipStrokeColor">@color/chip_stroke_selected</item>
         <item name="background">@drawable/border_button</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
     <style name="LableText" parent="Widget.AppCompat.TextView">

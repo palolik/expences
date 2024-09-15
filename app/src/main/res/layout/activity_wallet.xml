@@ -52,13 +52,18 @@
                         android:layout_height="50dp"
                         app:layout_constraintTop_toTopOf="parent" />
                     <ImageView
+                        android:id="@+id/backhome"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="45dp"
                         android:layout_marginStart="20dp"
-                        app:srcCompat="@drawable/ic_back" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_back"
+                        android:contentDescription="string/back_button_description" />
+
                     <ImageView
                         android:layout_width="33dp"
                         android:layout_height="35dp"
@@ -129,12 +134,15 @@
                                 android:orientation="vertical">
 
                                 <LinearLayout
+                                    android:id="@+id/addmoney"
+                                    android:clickable="true"
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:background="@drawable/border_button"
                                     android:gravity="center">
 
                                     <ImageView
+
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         app:srcCompat="@drawable/addicon" />
@@ -207,42 +215,50 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/linearLayout6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"
+                            android:background="#DEDEDE"
                             android:padding="0dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:background="#DEDEDE"
                             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
                             <com.google.android.material.chip.ChipGroup
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:singleSelection="true"
                                 android:layout_margin="0dp"
-                                >
+                                app:singleSelection="true">
 
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_in"
                                     style="@style/CustomShipStyle"
-                                    android:layout_margin="0dp"
                                     android:layout_width="140dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_margin="0dp"
                                     android:background="@drawable/border_button"
                                     android:text="Transactions" />
 
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_out"
                                     style="@style/CustomShipStyle"
-                                    android:layout_margin="0dp"
                                     android:layout_width="140dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_margin="0dp"
                                     android:text="Upcoming Bills" />
+
                             </com.google.android.material.chip.ChipGroup>
 
                         </LinearLayout>
 
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+                            tools:layout_editor_absoluteX="10dp"
+                            tools:listitem="@layout/transactions"
+                            />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -252,7 +268,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
