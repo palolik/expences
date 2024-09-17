@@ -2,10 +2,7 @@ package com.kotlin5.expenses.ui.view
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kotlin5.expenses.R
 
@@ -21,12 +18,10 @@ class StatisticsActivity : AppCompatActivity() {
                     true
                 }
                 R.id.statistics -> {
-
                     true
                 }
                 R.id.wallet -> {
                     startActivity(Intent(this, WalletActivity::class.java))
-
                     true
                 }
                 R.id.myprofile -> {

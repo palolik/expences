@@ -140,14 +140,11 @@
                                     android:layout_height="60dp"
                                     android:background="@drawable/border_button"
                                     android:gravity="center">
-
                                     <ImageView
-
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         app:srcCompat="@drawable/addicon" />
                                 </LinearLayout>
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -157,25 +154,21 @@
                                     android:textColor="@color/black"
                                     android:textStyle="bold" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="20dp"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:background="@drawable/border_button"
                                     android:gravity="center">
-
                                     <ImageView
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         app:srcCompat="@drawable/payicon" />
                                 </LinearLayout>
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -185,24 +178,20 @@
                                     android:textColor="@color/black"
                                     android:textStyle="bold" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:background="@drawable/border_button"
                                     android:gravity="center">
-
                                     <ImageView
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         app:srcCompat="@drawable/sendicon" />
                                 </LinearLayout>
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -213,7 +202,6 @@
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </LinearLayout>
-
                         <LinearLayout
                             android:id="@+id/linearLayout6"
                             android:layout_width="wrap_content"
@@ -224,13 +212,11 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
                             <com.google.android.material.chip.ChipGroup
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="0dp"
                                 app:singleSelection="true">
-
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_in"
                                     style="@style/CustomShipStyle"
@@ -239,7 +225,6 @@
                                     android:layout_margin="0dp"
                                     android:background="@drawable/border_button"
                                     android:text="Transactions" />
-
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_out"
                                     style="@style/CustomShipStyle"

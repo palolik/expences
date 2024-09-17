@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
 }
-
 android {
     namespace = "com.kotlin5.expenses"
     compileSdk = 34
@@ -37,7 +36,6 @@ android {
         buildConfig = true
     }
 }
-
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -113,7 +113,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="1dp"
                                     app:singleSelection="true">
-
                                     <com.google.android.material.chip.Chip
                                         android:id="@+id/cards"
                                         style="@style/CustomShipStyle"
@@ -121,7 +120,6 @@
                                         android:layout_height="wrap_content"
                                         android:layout_margin="0dp"
                                         android:text="cards" />
-
                                     <com.google.android.material.chip.Chip
                                         android:id="@+id/btn_cash_out"
                                         style="@style/CustomShipStyle"

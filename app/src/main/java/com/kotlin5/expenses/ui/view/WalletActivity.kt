@@ -8,11 +8,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kotlin5.expenses.R
 
 class WalletActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wallet)
-
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -32,7 +30,6 @@ class WalletActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
         if (savedInstanceState == null) {
             bottomNavigationView.selectedItemId = R.id.wallet
         }
@@ -41,6 +38,7 @@ class WalletActivity : AppCompatActivity() {
             val intent = Intent(this, ConnectwalletActivity::class.java)
             startActivity(intent)
         }
+
         findViewById<View>(R.id.backhome).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

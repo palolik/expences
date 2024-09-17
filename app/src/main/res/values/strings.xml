@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">expenses</string>
     <string name="add">add</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="profile">Profile</string>
+    <string name="username">Profile</string>
+    <string name="designation">Profile</string>
+    <string name="language">Language</string>
+    <string name="bangla">Bangla</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="english">English</string>
 </resources>

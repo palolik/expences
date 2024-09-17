@@ -4,12 +4,134 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
-
-    <!-- Content for Accounts layout -->
-    <TextView
+    <LinearLayout
+        android:clickable="true"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:text="Accounts Content"
-        android:textSize="50sp"
-        android:textColor="@android:color/black"/>
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@color/lightgreen"
+        android:gravity="center"
+        android:id="@+id/manualmoney">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/addicon"
+            android:layout_marginLeft="15dp"/>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD Money Manually"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="add money manually"
+                android:textSize="12dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@color/lightgreen"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/addicon"
+            android:layout_marginLeft="15dp"/>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank Link"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect your bank account to deposit $ fund"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@color/lightgreen"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/addicon"
+            android:layout_marginLeft="15dp"/>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Microdeposits"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect bank in 5-7 days"
+                android:textSize="12dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@color/lightgreen"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/addicon"
+            android:layout_marginLeft="15dp"/>
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paypal"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect your paypal account"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

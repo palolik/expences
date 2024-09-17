@@ -58,24 +58,21 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1">
-                        <ImageButton
-                            android:id="@+id/btn_back"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="16dp"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:contentDescription="Back"
-                            android:src="@drawable/ic_back" />
-
-
-
+                            <ImageButton
+                                android:id="@+id/btn_back"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="16dp"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:contentDescription="Back"
+                                android:src="@drawable/ic_back" />
                             <TextView
                                 android:id="@+id/tv_add_expense"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:textSize="20sp"
-                                android:text="Add Expense"
+                                android:text="Add Money"
                                 android:textColor="@android:color/white"
                                 android:textStyle="bold"
                                 android:layout_gravity="center"/>
@@ -97,37 +94,6 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:padding="16dp">
-                            <LinearLayout
-                                       android:layout_width="match_parent"
-                                       android:layout_height="wrap_content"
-                                       android:orientation="horizontal"
-                                       android:gravity="center"
-                                       android:layout_marginTop="4dp">
-                            <com.google.android.material.chip.ChipGroup
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                app:singleSelection="true"
-                                >
-
-                                <com.google.android.material.chip.Chip
-                                    android:id="@+id/btn_cash_in"
-                                    android:text="Cash in"
-                                    style="@style/CustomShipStyle"
-                                    android:layout_width="140dp"
-                                    android:background="@drawable/border_button"
-                                    android:layout_height="wrap_content"
-                                    />
-
-                                <com.google.android.material.chip.Chip
-                                    android:id="@+id/btn_cash_out"
-                                    android:text="Cash out"
-                                    style="@style/CustomShipStyle"
-                                    android:layout_width="140dp"
-                                    android:layout_height="wrap_content"
-                                    />
-                            </com.google.android.material.chip.ChipGroup>
-
-                            </LinearLayout>
                             <TextView
                                 android:id="@+id/textView"
                                 style="@style/LableText"
@@ -178,7 +144,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical"
-                            >
+                                >
                                 <TextView
                                     android:id="@+id/tv_date"
                                     android:layout_width="match_parent"

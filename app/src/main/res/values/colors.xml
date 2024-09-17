@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#2F7E79</color>
+    <color name="blue">#0073FF</color>
+    <color name="lightgreen">#DBFDFB</color>
     <color name="colorCashIn">#2F7E79</color>
     <color name="colorCashOut">#BF4848</color>
     <color name="colorDefault">#000000</color>
