@@ -9,7 +9,7 @@ android {
     compileSdk = 34
     defaultConfig {
         applicationId = "com.kotlin5.expenses"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -22,6 +22,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            debug {
+                isDebuggable = true
+            }
         }
     }
     compileOptions {
@@ -34,6 +37,7 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+
     }
 }
 dependencies {
@@ -51,6 +55,7 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
+    implementation(libs.charts)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

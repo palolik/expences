@@ -66,9 +66,6 @@
                             android:background="?android:attr/selectableItemBackground"
                             android:contentDescription="Back"
                             android:src="@drawable/ic_back" />
-
-
-
                             <TextView
                                 android:id="@+id/tv_add_expense"
                                 android:layout_width="wrap_content"
@@ -108,7 +105,6 @@
                                 android:layout_height="wrap_content"
                                 app:singleSelection="true"
                                 >
-
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_in"
                                     android:text="Cash in"
@@ -117,7 +113,6 @@
                                     android:background="@drawable/border_button"
                                     android:layout_height="wrap_content"
                                     />
-
                                 <com.google.android.material.chip.Chip
                                     android:id="@+id/btn_cash_out"
                                     android:text="Cash out"
@@ -126,7 +121,6 @@
                                     android:layout_height="wrap_content"
                                     />
                             </com.google.android.material.chip.ChipGroup>
-
                             </LinearLayout>
                             <TextView
                                 android:id="@+id/textView"
@@ -209,6 +203,7 @@
                                 />
                         </LinearLayout>
                     </LinearLayout>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
